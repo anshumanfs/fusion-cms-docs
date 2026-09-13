@@ -1,41 +1,43 @@
-# Website
+# Fusion CMS Docs
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+Documentation site for Fusion CMS, built with Docusaurus.
 
-### Installation
+## Installation
 
+```bash
+npm install
 ```
-$ yarn
-```
 
-### Local Development
+## Local Development
 
-```
-$ yarn start
+```bash
+npm run start
 ```
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-### Build
+## Quality Checks
 
+```bash
+npm run typecheck
+npm run build
 ```
-$ yarn build
+
+Use both before handing off release documentation changes.
+
+## Build
+
+```bash
+npm run build
 ```
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
-### Deployment
+## Structure
 
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+- `docs/getting-started`: install, config, running, CLI, troubleshooting.
+- `docs/core-concepts`: databases, schemas, users.
+- `docs/tutorials`: admin registration, app creation, generated API, access control.
+- `docs/access-control`: authentication and access schemas.
+- `docs/api`: generated API surfaces.
+- `docs/advanced`: custom code and beta limitations.

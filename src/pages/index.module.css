@@ -1,18 +1,22 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
 .heroBanner {
-  padding: 4rem 0;
+  padding: 5rem 0 4rem;
   text-align: center;
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  background: var(--ifm-background-surface-color);
+}
+
+.subtitle {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 1.25rem;
+  margin: 1rem auto 2rem;
+  max-width: 48rem;
 }
 
 @media screen and (max-width: 996px) {
   .heroBanner {
-    padding: 2rem;
+    padding: 3rem 1rem;
   }
 }
 
@@ -20,4 +24,86 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.heroFlow {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 0 auto 2rem;
+}
+
+.heroFlow span {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 999px;
+  padding: 0.4rem 0.8rem;
+  background: var(--ifm-background-color);
+  font-size: 0.9rem;
+  font-weight: 700;
+  animation: homePulse 5s ease-in-out infinite;
+}
+
+.heroFlow span:nth-child(2) {
+  animation-delay: 0.45s;
+}
+
+.heroFlow span:nth-child(3) {
+  animation-delay: 0.9s;
+}
+
+.heroFlow span:nth-child(4) {
+  animation-delay: 1.35s;
+}
+
+.heroFlow span:nth-child(5) {
+  animation-delay: 1.8s;
+}
+
+@keyframes homePulse {
+  0%,
+  100% {
+    transform: translateY(0);
+    border-color: var(--ifm-color-emphasis-200);
+  }
+  45% {
+    transform: translateY(-3px);
+    border-color: var(--ifm-color-primary);
+  }
+}
+
+.main {
+  padding: 3rem 0;
+}
+
+.featureGrid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.featureGrid article {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.releaseStrip {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: var(--ifm-background-surface-color);
+}
+
+.releaseStrip p {
+  max-width: 52rem;
+}
+
+@media screen and (max-width: 996px) {
+  .featureGrid {
+    grid-template-columns: 1fr;
+  }
 }

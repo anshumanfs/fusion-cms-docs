@@ -28,3 +28,149 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+.flowRail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: stretch;
+  margin: 2rem 0;
+}
+
+.compactFlow {
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+}
+
+.flowCard {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  padding: 1rem;
+  background: var(--ifm-background-surface-color);
+  box-shadow: 0 10px 28px rgba(20, 30, 45, 0.08);
+  min-height: 8rem;
+}
+
+.flowCard strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 1rem;
+}
+
+.flowCard p {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.flowStep {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-bottom: 0.65rem;
+  border-radius: 999px;
+  background: var(--ifm-color-primary);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.flowArrow {
+  display: flex;
+  align-items: center;
+  color: var(--ifm-color-primary);
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.flowPulse {
+  animation: flowPulse 4.8s ease-in-out infinite;
+}
+
+.flowDelayOne {
+  animation-delay: 0.6s;
+}
+
+.flowDelayTwo {
+  animation-delay: 1.2s;
+}
+
+.flowDelayThree {
+  animation-delay: 1.8s;
+}
+
+@keyframes flowPulse {
+  0%,
+  100% {
+    transform: translateY(0);
+    border-color: var(--ifm-color-emphasis-200);
+  }
+  45% {
+    transform: translateY(-4px);
+    border-color: var(--ifm-color-primary);
+  }
+}
+
+.runtimeLoop,
+.architectureMap {
+  display: grid;
+  gap: 0.75rem;
+  margin: 2rem 0;
+}
+
+.runtimeLoop {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.runtimeLoop div,
+.architectureNode {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  padding: 1rem;
+  background: var(--ifm-background-surface-color);
+}
+
+.runtimeLoop strong,
+.runtimeLoop span {
+  display: block;
+}
+
+.runtimeLoop span {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.86rem;
+  margin-top: 0.4rem;
+}
+
+.architectureMap {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  position: relative;
+}
+
+.architectureNode {
+  text-align: center;
+  font-weight: 700;
+  animation: flowPulse 5.4s ease-in-out infinite;
+}
+
+.architectureNode.primary {
+  background: color-mix(in srgb, var(--ifm-color-primary) 14%, var(--ifm-background-surface-color));
+}
+
+.architectureLine {
+  display: none;
+}
+
+@media screen and (max-width: 996px) {
+  .flowRail,
+  .compactFlow,
+  .runtimeLoop,
+  .architectureMap {
+    grid-template-columns: 1fr;
+  }
+
+  .flowArrow {
+    justify-content: center;
+    transform: rotate(90deg);
+  }
+}
